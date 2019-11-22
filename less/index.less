@@ -65,6 +65,11 @@ html, body {
 @content-width: 90%;
 @side-margin: 5%;
 @vert-margin: 1em;
+.items{
+	margin-top: 0.35em;
+	margin-bottom: 0.35em;
+
+ }
 .header{
 	display:flex;
 	flex-direction: column;
@@ -75,9 +80,10 @@ html, body {
 	width:@content-width;
 	margin-left: @side-margin;
 	margin-right: @side-margin;
-	margin-top: @vert-margin;
+	margin-top: 1.5em;
 	margin-bottom: @vert-margin;
   
+	
   .navigation{
 	  width:100%;
 	  font-size:@font;
@@ -91,14 +97,13 @@ html, body {
 		  align-content: flex-end;
 		  justify-content: space-around;
 		  
-		  &:hover{
-			  background: white;
-		  }
+		  li:hover{
+			color: rgb(248, 220, 220);
 		  
 		}
 		
   }
-
+  }
 
 
   .head{
@@ -106,10 +111,19 @@ html, body {
 	 flex-direction: row;
 	 justify-content: center;
 	  
+	 @media (max-width: 500px){
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
 	  .intro{
 		 display: flex;
 		 flex-direction: column;
 		 width: 50%;
+
+		 @media (max-width: 500px){
+			width: 100%;
+		}
 		 
 		  h1{
 			margin-top: 1em;
@@ -130,6 +144,10 @@ html, body {
 		 padding: 4%;
 		 border-radius: 2em;
 		 border:1px solid gray;
+
+		 @media (max-width: 500px){
+			width: 100%;
+		}
 	  }
   }
 
@@ -153,13 +171,23 @@ html, body {
 	margin-right: @side-margin;
 	margin-top: @vert-margin;
 	margin-bottom: @vert-margin;
+
+	@media (max-width: 500px){
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
   
     .innerContent{
 		width: 45%;
-
+		
+		@media (max-width: 500px){
+			width: 100%;
+		}
+		
 		.items{
-		   margin-top: 0.25em;
-		   margin-bottom: 0.25em;
+		   margin-top: 0.35em;
+		   margin-bottom: 0.35em;
 
 		}
 	}
@@ -187,15 +215,18 @@ html, body {
 
   
 
-
-   .media{
-     .icon{
-        .items();
-     }
-	}
+.media{
+   .icon{
+	.items();
+   }
+}
+  
 }
 .copyright{
-	text-align: center;
-	
-}
 
+	p{
+    margin-top: 2em;
+	text-align: center;
+	margin-bottom: 3em;
+	}
+}
